@@ -23,65 +23,46 @@ menu = '''
 
 '''
 print(hotel)
-#functions for EASY entry in program
 
-def guest_checkin()
+#guest check in function
+def guest_checkin():
+    guest_info['occupant name'] = input('Guest name? ')
+    guest_info['phone number'] = input('Phone number? ')
+    response = input('Has guest prepaid for their room?(y/n) ')
+    if response == 'y':
+        guest_info['prepaid?'] = True
+    else:
+        guest_info['prepaid?'] = False
+    room_assign = input('Assign to which room? ')
+    hotel[room_assign] = guest_info
+#checking guests out function
+def guest_checkout():
+        sel = input('Room Number? ')
+        hotel[sel] = ''
 
-
-
-
+#room availability function
 def is_vacant(room):
     if hotel[room] == '':
         print(f'Room {room} is vacant')
     else:
         print(f'Room {room} is occupied by {hotel[room]["occupant name"]}')
-    
 
 
 
-
-
-# Printing the room status
-#for room_number in hotel.keys():
-    # The room_number variable will be a 
-    # string, like '101' or '103'
-    # if hotel[room_number] == '':
-    #     print(f'{room_number} is vacant')
-    # else:
-    #     print(f'{room_number} is occupied by {hotel[room_number][]}')
-
-print('Guest check-in/check-out system')
-
+#program
 while True:
+    print('Guest check-in/check-out system')
     print(menu)
     print(hotel)
     menu_sel = int(input('Select option: '))
-    if menu_sel == 1:
-        guest_info['occupant name'] = input('Guest name? ')
-        guest_info['phone number'] = input('Phone number? ')
-        response = input('Has guest prepaid for their room?(y/n) ')
-        if response == 'y':
-            guest_info['prepaid?'] = True
-        else:
-            guest_info['prepaid?'] = False
-        room_assign = input('Assign to which room? ')
-        hotel[room_assign] = guest_info
-    elif menu_sel == 2:
-        sel = input('Room Number? ')
-        hotel[sel] = ''
-    elif menu_sel == 3:
+    if menu_sel == 1: #guest check in
+        guest_checkin()
+    elif menu_sel == 2: #guest check out
+        guest_checkout()
+    elif menu_sel == 3: #room availability
         choice = input('Room Number? ')
         is_vacant(choice)
         
-
-    
-
-
-
-
-#print(hotel)
-
-#this will prompt for phone and assign to the key 'phone number for new_guest
 
 
 
