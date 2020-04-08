@@ -28,13 +28,18 @@ print(hotel)
 def guest_checkin():
     guest_info['occupant name'] = input('Guest name? ')
     guest_info['phone number'] = input('Phone number? ')
-    response = input('Has guest prepaid for their room?(y/n) ')
-    if response == 'y':
-        guest_info['prepaid?'] = True
-    else:
-        guest_info['prepaid?'] = False
+    guest_info['prepaid?'] = is_prepaid() 
     room_assign = input('Assign to which room? ')
     hotel[room_assign] = guest_info
+
+def is_prepaid():
+    response = input('Has guest prepaid for their room?(y/n) ')
+    if response == 'y':
+        return True
+    else:
+        return False
+
+
 
 #checking guests out function
 def guest_checkout():
