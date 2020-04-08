@@ -1,11 +1,11 @@
 #hotel app
 
 hotel = {
-    '101' : '',
-    '102' : '',
-    '103' : '',
-    '104' : '',
-    '105' : '',
+    '101' : {},
+    '102' : {},
+    '103' : {},
+    '104' : {},
+    '105' : {},
 
     }
 
@@ -35,14 +35,15 @@ def guest_checkin():
         guest_info['prepaid?'] = False
     room_assign = input('Assign to which room? ')
     hotel[room_assign] = guest_info
+
 #checking guests out function
 def guest_checkout():
         sel = input('Room Number? ')
-        hotel[sel] = ''
+        hotel[sel] = {}
 
 #room availability function
 def is_vacant(room):
-    if hotel[room] == '':
+    if hotel[room] == {}:
         print(f'Room {room} is vacant')
     else:
         print(f'Room {room} is occupied by {hotel[room]["occupant name"]}')
