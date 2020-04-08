@@ -22,11 +22,31 @@ menu = '''
 3. Check room availability
 
 '''
+print(hotel)
+#functions for EASY
+
+# def is_vacant(which_hotel, room):
+#     for rm in hotel.keys():
+#         if hotel[]
+
+
+
+
+
+# Printing the room status
+#for room_number in hotel.keys():
+    # The room_number variable will be a 
+    # string, like '101' or '103'
+    # if hotel[room_number] == '':
+    #     print(f'{room_number} is vacant')
+    # else:
+    #     print(f'{room_number} is occupied by {hotel[room_number][]}')
 
 print('Guest check-in/check-out system')
 
 while True:
     print(menu)
+    print(hotel)
     menu_sel = int(input('Select option: '))
     if menu_sel == 1:
         guest_info['occupant name'] = input('Guest name? ')
@@ -38,11 +58,23 @@ while True:
             guest_info['prepaid?'] = False
         room_assign = input('Assign to which room? ')
         hotel[room_assign] = guest_info
+    elif menu_sel == 2:
+        sel = input('Room Number? ')
+        hotel[sel] = ''
+    elif menu_sel == 3:
+        choice = input('Room Number? ')
+        if hotel[choice] == '':
+            print(f'Room {choice} is vacant')
+        else:
+            print(f'Room {choice} is occupied')
+        
+
+    
 
 
 
 
-print(hotel)
+#print(hotel)
 
 #this will prompt for phone and assign to the key 'phone number for new_guest
 
