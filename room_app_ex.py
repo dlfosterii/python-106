@@ -23,11 +23,19 @@ menu = '''
 
 '''
 print(hotel)
-#functions for EASY
+#functions for EASY entry in program
 
-# def is_vacant(which_hotel, room):
-#     for rm in hotel.keys():
-#         if hotel[]
+def guest_checkin()
+
+
+
+
+def is_vacant(room):
+    if hotel[room] == '':
+        print(f'Room {room} is vacant')
+    else:
+        print(f'Room {room} is occupied by {hotel[room]["occupant name"]}')
+    
 
 
 
@@ -63,10 +71,7 @@ while True:
         hotel[sel] = ''
     elif menu_sel == 3:
         choice = input('Room Number? ')
-        if hotel[choice] == '':
-            print(f'Room {choice} is vacant')
-        else:
-            print(f'Room {choice} is occupied')
+        is_vacant(choice)
         
 
     
