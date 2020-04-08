@@ -15,11 +15,6 @@ guest_info = {
     'prepaid?' : False
 }
 
-guest_info = {
-    'occupant name' : "James",
-    'phone number' : '770-555-3235',
-    'prepaid?' : False
-}
 menu = '''
 
 1. Check-in new guest
@@ -30,14 +25,23 @@ menu = '''
 
 print('Guest check-in/check-out system')
 
+while True:
+    print(menu)
+    menu_sel = int(input('Select option: '))
+    if menu_sel == 1:
+        guest_info['occupant name'] = input('Guest name? ')
+        guest_info['phone number'] = input('Phone number? ')
+        response = input('Has guest prepaid for their room?(y/n) ')
+        if response == 'y':
+            guest_info['prepaid?'] = True
+        else:
+            guest_info['prepaid?'] = False
+        room_assign = input('Assign to which room? ')
+        hotel[room_assign] = guest_info
 
-guest_info['occupant name'] = input('Guest name? ')
-guest_info['phone number'] = input('Phone number? ')
-guest_info['prepaid?'] = input('Has guest prepaid for their room? ')
 
 
-room_assign = input('Assign to which room? ')
-hotel[room_assign] = guest_info
+
 print(hotel)
 
 #this will prompt for phone and assign to the key 'phone number for new_guest
@@ -49,7 +53,8 @@ print(hotel)
 # Small: Single hotel
 
 
-# The goal of the small exercise is to get practice with the syntax for querying and manipulating the data in a single, nested dictionary.
+# The goal of the small exercise is to get practice with the syntax 
+# for querying and manipulating the data in a single, nested dictionary.
 
 # Write functions to:
 
